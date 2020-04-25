@@ -124,11 +124,10 @@ switch (country) {
 //показывай alert с текстом 'Было введено не число, попробуйте еще раз', при этом результат prompt плюсовать к общей сумме не нужно, 
 //после чего снова пользователю предлагается ввести число в prompt.
 let input;
-let total1;
-let count = prompt("Введите число", "");
-total1 += count;
-if (count === null) {
-    alert(`Общая сумма чисел равна ${total1}`);
-} else {
-    prompt("Введите число", "");
+let total1 = 0;
+do {
+    input = +prompt("Введите число", "");
+    total1 += input;
 }
+while (input);
+alert(`Общая сумма чисел равна ${total1}`);
